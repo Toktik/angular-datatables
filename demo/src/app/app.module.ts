@@ -58,6 +58,19 @@ import { ResponsiveExtensionConfigurationComponent } from './extensions/responsi
 import { SelectExtensionComponent } from './extensions/select-extension.component';
 import { SelectExtensionSnippetComponent } from './extensions/select-extension-snippet.component';
 import { SelectExtensionConfigurationComponent } from './extensions/select-extension-configuration.component';
+import { UsingNgPipeComponent } from './advanced/using-ng-pipe.component';
+import { UsingPipeSnippetComponent } from './advanced/using-pipe-snippet.component';
+
+// HightlightJS
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml';
+import { UpperCasePipe } from '@angular/common';
+
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
 
 @NgModule({
     declarations: [
@@ -105,7 +118,9 @@ import { SelectExtensionConfigurationComponent } from './extensions/select-exten
         ResponsiveExtensionConfigurationComponent,
         SelectExtensionComponent,
         SelectExtensionSnippetComponent,
-        SelectExtensionConfigurationComponent
+        SelectExtensionConfigurationComponent,
+        UsingNgPipeComponent,
+        UsingPipeSnippetComponent
     ],
     imports: [
         BrowserModule,
@@ -117,7 +132,8 @@ import { SelectExtensionConfigurationComponent } from './extensions/select-exten
         AppRoutingModule
     ],
     providers: [
-        HighlightJsService
+      UpperCasePipe,
+      HighlightJsService
     ],
     bootstrap: [AppComponent]
 })
