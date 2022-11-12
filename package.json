@@ -3,6 +3,7 @@
   "version": "6.0.1",
   "description": "Angular directive for DataTables",
   "scripts": {
+    "start": "ng serve",
     "build": "npm run clean && npm run compile && npm run bundles",
     "clean": "rimraf -f index.{d.ts,js,js.map,metadata.json} src/*.{d.ts,js,map,metadata.json} bundles",
     "compile": "npm run lint:code && ngc -p tsconfig-build.json",

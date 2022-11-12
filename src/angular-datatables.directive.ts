@@ -98,7 +98,8 @@ export class DataTableDirective implements OnDestroy, OnInit {
                   const cellFromIndex = row.childNodes.item(index);
                   // render onto DOM
                   // finalize context to be sent to user
-                  const _context = Object.assign({}, context, context?.userData, {
+                  const userData = context ? context.userData : undefined;
+                  const _context = Object.assign({}, context, userData, {
                     adtData: data
                   });
                   const instance = self.vcr.createEmbeddedView(ref, _context);
